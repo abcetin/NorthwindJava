@@ -19,14 +19,14 @@ public class NorthwindApplication {
 	}
 	
 	//bean -- java classı  -- konfigürasyon amaçlı kullanılıyor
-	//program derlendiği anda bean i görünce belleğe yerleştiriyor bir docket isimli nesneyle bizim controllerlarımızı ordaki bütün 
-	//request handlerları bulup bizim için dökmantasyın haline getiriyor.
-	@Bean 
-    public Docket api() { 
-        return new Docket(DocumentationType.SWAGGER_2)  
-          .select()                                  
-          .apis(RequestHandlerSelectors.basePackage("kodlamaio.northwind"))        
-          .build();                                           
-    }
+		//program derlendiği anda bean i görünce belleğe yerleştiriyor bir docket isimli nesneyle bizim controllerlarımızı ordaki bütün 
+		//request handlerları bulup bizim için dökmantasyın haline getiriyor.
+		@Bean 
+	    public Docket api() { 
+	        return new Docket(DocumentationType.SWAGGER_2)  
+	          .select()                                  
+	          .apis(RequestHandlerSelectors.basePackage("kodlamaio.northwind"))        
+	          .build();                                           
+	    }
 
 }
