@@ -10,12 +10,11 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import lombok.AllArgsConstructor;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name  = "categories")
@@ -31,4 +30,10 @@ public class Category {
 	
 	@OneToMany(mappedBy = "category")
 	private List<Product> products;
+
+	public Category(int categoryId, String categoryName) {
+		super();
+		this.categoryId = categoryId;
+		this.categoryName = categoryName;
+	}
 }

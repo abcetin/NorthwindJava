@@ -14,6 +14,7 @@ import kodlamaio.northwind.bussiness.abstracts.ProductService;
 import kodlamaio.northwind.core.utilities.results.DataResult;
 import kodlamaio.northwind.core.utilities.results.Result;
 import kodlamaio.northwind.entities.concretes.Product;
+import kodlamaio.northwind.entities.dtos.ProductWithCategoryDto;
 
 //farklı uygulamalara controller ile veri aktarımı yapıyoruz 
 @RestController // sen bir controllersın dedik
@@ -31,6 +32,12 @@ public class ProductsController {
 	@GetMapping("/getall")
 	public DataResult<List<Product>> getAll() {
 		return this.productService.getAll();
+
+	}
+	
+	@GetMapping("/getProductWithCategoryDetails")
+	public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetail() {
+		return this.productService.getProductWithCategoryDetails();
 
 	}
 
